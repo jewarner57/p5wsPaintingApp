@@ -1,0 +1,17 @@
+{
+  "name": "week3-miniproject",
+  "version": "1.0.0",
+  "description": "Sockets Drawing App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/nodemon server.js"
+  },
+  "author": "Jonathan Warner",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}
