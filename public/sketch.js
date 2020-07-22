@@ -24,6 +24,7 @@ function setup() {
   socket = io.connect('http://localhost:3000')
 
   socket.on('updateCanvas', newDrawing)
+  socket.on('clearCanvas', clearCanvas)
 
   // Initialize brushHue to 0 (which is delcared at the top)
   brushHue = 0;
@@ -87,9 +88,14 @@ function sendCanvasChanges(shape) {
   socket.emit('canvasChanged', data)
 }
 
+function clearCanvas() {
+  background(90)
+}
+
 function keyTyped() {
   if (key === 'd') {
-    background(90)
+    clearCanvas()
+    socket.emit('canvasCleared')
   }
   if (key === 'a') {
     if (brushColorMode === 'positional') {

@@ -14,4 +14,7 @@ io.on('connection', function (socket) {
     socket.on('canvasChanged', function (data) {
         socket.broadcast.emit('updateCanvas', data)
     });
+    socket.on('canvasCleared', function () {
+        socket.broadcast.emit('clearCanvas')
+    })
 });
